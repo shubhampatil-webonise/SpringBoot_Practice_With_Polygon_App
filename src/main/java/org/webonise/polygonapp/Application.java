@@ -1,3 +1,5 @@
+package org.webonise.polygonapp;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -26,7 +28,7 @@ public class Application {
         try {
             getDataAndInitObject();
         } catch (Exception exception) {
-            logger.debug(exception.getMessage());
+            logger.error(exception.getMessage());
             System.exit(1);
         }
 
@@ -38,14 +40,14 @@ public class Application {
         double lengthOfEachSide = 0.0;
 
         try {
-            logger.debug("Enter number of sides :");
+            logger.info("Enter number of sides :");
             numberOfSides = scanner.nextInt();
 
-            logger.debug("Enter length of each side :");
+            logger.info("Enter length of each side :");
             lengthOfEachSide = scanner.nextDouble();
 
         } catch (InputMismatchException inputMismatchError) {
-            logger.debug("Aborting : Unexpected input types.");
+            logger.error("Aborting : Unexpected input types.");
             System.exit(1);
         }
 
@@ -73,7 +75,7 @@ public class Application {
     }
 
     private void printResults() {
-        logger.debug("Sum of Interior Angles of Polygon : " + polygon.calculateSumOfInteriorAngles() + "\n");
-        logger.debug("Parameter of Polygon : " + polygon.calculateParameter() + "\n");
+        logger.info("Sum of Interior Angles of org.webonise.polygonapp.Polygon : " + polygon.calculateSumOfInteriorAngles() + "\n");
+        logger.info("Parameter of org.webonise.polygonapp.Polygon : " + polygon.calculateParameter() + "\n");
     }
 }

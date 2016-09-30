@@ -1,3 +1,5 @@
+package org.webonise.polygonapp;
+
 import org.springframework.stereotype.Component;
 
 @Component
